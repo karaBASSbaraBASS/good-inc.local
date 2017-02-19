@@ -1,0 +1,662 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, 
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font: 14px/24px Arial, Tahoma, sans-serif;
+	background-color: #ebebeb; 
+}
+
+ol, ul {
+	list-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: 'NexaHeavy';
+	src: url('/fonts/nexa/Nexa Bold.otf');
+}
+
+@font-face {
+	font-family: 'NexaLight';
+	src: url('/fonts/nexa/Nexa Light.otf');
+}
+
+
+.clearfix:before, 
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.container {
+	width: 960px; /* запас в 20 пикселей - на рамочку */
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+#footer,
+#header {
+	background-color: #373737;
+}
+
+.logo a {
+	position: relative;
+	display: inline-block;
+	height: 65px;
+	width: 80px;
+	background: #F26C4F;
+	font: 36px 'NexaHeavy';
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.logo a:after,
+.feature-txt:after {
+	content: '';
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	margin-top: -13px;
+	display: block;
+	height: 0;
+	width: 0;
+	border-top: 12px solid transparent;
+	border-left: 12px solid #F26C4F;
+	border-bottom: 12px solid transparent;
+}
+
+.logo span {
+	display: inline-block;
+	font: 18px 'NexaLight';
+	color: #fff;
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+#nav {
+	background: #474747;
+}
+
+.navigation li {
+	float: left;
+	padding: 25px 0px;
+}
+
+.navigation li span {
+	display: block;
+	border-right: 1px solid #767676; /* полоса разделитель */
+	height: 11px; /* высота полосы разделителя */
+	line-height: 11px; /* выровнять всю строку по высоте полосы разделителя */
+	padding: 0px 25px;
+	
+}
+
+.navigation li span:last-child {
+	/*border-right: none; */
+}
+
+.navigation li a {
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.navigation li.active a:after,
+.navigation li a:hover:after {
+	content: '';
+	position: absolute;
+	left: 0;  /* левый и правый отступ чтобы растянуть обьект на всю ширину текста*/
+	right: 0;
+	bottom: -22px;
+	display: block;
+	height: 4px;
+	background: #F26C4F;
+}
+
+.panel-header {
+	padding: 15px 0px 10px 0px;
+}
+
+.search-wrap {
+	width: 300px;
+}
+
+.search {
+	width: 100%;
+	height: 45px;
+	padding: 15px 20px;
+	background: #fff url(../img/clock.png) no-repeat right 13px center;
+	border: 0;
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+	   -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+		-ms-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+		 -o-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+	        box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+
+.search::-webkit-input-placeholder,
+.search::-moz-placeholder,
+.search:-moz-placeholder,
+.search:-ms-input-placeholder {
+	font: bold 12px Arial, sans-serif;
+	color: #959595;
+}
+
+.social {
+	padding-top: 11px;
+}
+
+.social a {
+	display: inline-block;
+	margin-left: 25px;
+	text-decoration: none;
+	color: #8f8f8f;
+	font: 12px;
+	height: 13px;
+	padding-left: 20px; /* отступ для иконок */
+	line-height: 13px;
+	background: url(../img/social-sprite.png) no-repeat;
+}
+
+.social a:hover {
+	color: #555;
+}
+
+.social a:first-child {
+	margin-left: 0;
+}
+
+.social a.tw {
+	background-position: 0 0;
+}
+.social a.fb {
+	background-position: 0 -13px;
+}
+.social a.rs {
+	background-position: 0 -26px;
+}
+.social a.ma {
+	background-position: 0 -39px;
+}
+
+#articles,
+#feature,
+#middle,
+#more {
+	margin-bottom: 15px;
+}
+
+.feature-img {
+	position: relative; /* для того чтобы задать положение feature-descr */
+	height: 390px;
+	width: 630px;
+	background: #F26C4F;
+	overflow: hidden; /* спрятать край картинки, который вылезет на текст */
+}
+
+.feature-img img {
+	display: block; /* убрать стандартный нижний отступ картинки */
+	width: 100%;
+	height: auto;
+
+}
+
+.feature-txt:after {
+	left: 0;
+	top: 55px;
+}
+
+.feature-descr {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 365px;
+	padding: 20px 25px;
+	background: rgba(0,0,0,.5); /* opacity сделает фон и текст прозрачным, чтобы сделать прозрачным только фон используем - rgba */
+}
+
+.feature-descr p {
+	color: #fff;
+	font-size: 16px;
+}
+
+.feature-txt {
+	position: relative;
+	height: 390px;
+	width: 310px;
+	background: #373737;
+	border-left: 9px solid #F26C4F;
+	padding: 40px 37px;
+}
+
+.feature-txt h4 {
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 19px;
+	color: #fff;	
+}
+
+.feature-txt p,
+.autor {
+	font-size: 12px;
+	color: #a7a7a7;
+}
+
+.date {
+	display: inline-block; /* иконка в полный размер */
+	padding-left: 25px;
+	font-size: 12px;
+	color: #a7a7a7;
+	background: url(../img/clock-dark.png) no-repeat left center;
+}
+
+.articles-item {
+	float: left;
+	width: 300px;
+	height: 380px;
+	background-color: #fff;
+	margin-right: 20px;
+	border-bottom: 1px solid #d3d3d3;
+	
+}
+
+.articles-item:last-child {
+	margin-right: 0;
+}
+
+.article-img {
+	overflow: hidden;
+	position: relative;
+}
+
+.articles-item img {
+	height: 190px;
+	width: 100%;
+}
+
+.articles-footer {
+	padding: 20px 25px;
+}
+
+h3.title {
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 35px;
+	margin-bottom: 10px;
+}
+
+.articles-item p {
+	font-size: 12px;
+	line-height: 24px;
+	color: #646464;
+}
+
+h3.title a {
+	color: #4f4f4f;
+}
+
+h3.title a:hover {
+	color: #333;
+}
+
+.zoom {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 80px;
+	width: 80px;
+	background: url(../img/triangle.png) no-repeat;
+	text-align: right; /* выравнивание для + */
+	padding-top: 10px;
+	padding-right: 8px;
+}
+
+.zoom a {
+	display: inline-block;
+	padding: 5px 8px; /* размер области ссылки, чтобы не промахнутся мышкой */
+	color: #fff;
+	font-size: 30px;
+	font-family: Tahoma;
+}
+
+.sidebar {
+	width: 300px;
+}
+
+.content {
+	margin-right: 320px;
+}
+
+.news-bl {
+	position: relative;
+	width: 300px;
+	background-color: #373737;
+	color: #fff;
+	margin-bottom: 25px;
+}
+
+.news-bl h3.title a {
+	color: #fff;
+}
+
+.news-bl h3.title a:hover {
+	color: #ccc;
+}
+
+.news-item {
+	padding: 30px 40px 30px;
+	border-left: 5px solid #f26c4f;
+	background: #fff;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.news-item.small{
+	padding: 15px 40px 8px;
+	margin-bottom: 10px;
+}
+
+h4.title-news {
+	font-size: 24px;
+}
+
+h5.title-news a,
+h4.title-news a{
+	color: inherit;
+}
+
+.title-news {
+	color: #474747;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.news-item p {
+	color: #707070;
+	line-height: 21px;
+	margin-bottom: 15px;
+}
+
+.news-item.selected p {
+	color: #fff;
+}
+
+.news-item.selected {
+	background: #f26c4f;
+	border-color: #ce4e32;
+}
+
+.news-panel {
+	margin-bottom: 10px;
+	font: 10px Tahoma, sans-serif;
+	color: #8f8f8f;
+}
+
+.news-item.selected .news-panel,
+.news-item.selected .title-news {
+	color: #fff;
+}
+
+.news-panel span{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.divide {
+	margin: 0 30px;
+	width: 2px;
+	height: 21px;
+	background: #dfdfdf;
+}
+
+.news-item.small .divide {
+	margin: 0 30px;
+	width: 2px;
+	height: 12px;
+	background: #dfdfdf;
+}
+
+.rate {
+	width: 65px;
+	margin-right: 5px;
+}
+
+.rate span {
+	height: 14px;
+	background: url(../img/star.png) repeat-x;
+}
+
+.news-item.selected .rate span {
+	background: url(../img/star-white.png) repeat-x;
+}
+
+h5.title-news {
+	font-size: 18px;
+}
+
+#more {
+	text-align: center;	
+}
+
+.more-button{
+	display: inline-block;
+	background: url(../img/plus.png) no-repeat bottom center;
+	padding-bottom: 30px;
+	margin: 15px;
+}
+
+a.more-button {
+	font: bold 14px Arial, sans-serif;
+	text-transform: uppercase;
+	color: #bdbdbd;
+	letter-spacing: 1px;
+}
+
+#text-box,
+#news-box,
+#tb-different {
+	margin-bottom: 30px;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.tb-news {
+	padding: 30px 40px 30px;
+	background: #fff;
+}
+
+h2.title {
+	font: bold 30px Arial, sans-serif;
+	color: #707070;
+	padding-bottom: 20px;
+}
+
+.tb-news p{
+	font: bold 14px/24px Arial, sans-serif;
+	color: #707070;
+}
+
+.tb-news a{
+	font: bold 14px/24px Arial, sans-serif;
+	color: #f26c4f;
+}
+
+.tb-footer {
+	padding: 6px 30px 6px 30px;
+	background-color: #efefef;
+	border-top: 2px #dedede solid;
+	height: 40px;
+}
+
+.tb-footer span{
+	font: 12px/24px Arial, sans-serif;
+	color: #a2a2a2;
+}
+
+.tb-footer span>a{
+	display: inline-block;
+	background: url(../img/heart.png) no-repeat center;
+	padding-left: 15px;
+}
+
+.news-img {
+	height: 300px;
+}
+
+p.news-descr {
+	font: 14px/24px Arial, Tahoma, sans-serif;
+	color: #949494;
+}
+
+#devider {
+	margin: 0 25px 0 0;
+}
+
+#devider #line1{
+	height: 1px;
+	background: #d9d9d9;
+}
+
+#devider #line2{
+	height: 1px;
+	background: #f5f5f5;
+}
+
+#devider,
+.recent-post,
+.recent-post-pages {
+	padding-left: 20px;
+	margin-bottom: 25px;
+}
+
+.recent-post>p {
+	font-size: 12px;
+	color: #a7a7a7;
+	padding: 10px 0 10px 0;
+}
+
+.post-date {
+	font-size: 12px;
+	color: #8f8f8f;
+}
+
+li.link {
+	background-color: #fff;
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid #d3d3d3;
+	border-left: 3px solid #cacaca;
+}
+
+li.link a {
+	padding: 16px 20px;
+	display: block;
+	font: bold 16px Arial;
+	color: #474747;
+}
+
+li.link a:hover {
+	color: #707070;
+	border-left: 3px solid #fff;
+}
+
+.link p {
+	display: inline;	
+}
+
+p.autor {
+	padding-left: 10px;
+}
+
+#footer {
+	height: 140px;
+	border-bottom: 3px solid #303030;
+}
+
+.footer-navigation li {
+	float: left;
+	padding: 25px 0 20px 0;
+}
+
+.footer-navigation li span {
+	display: block;
+	padding-right: 20px;
+	
+}
+
+.footer-navigation li a {
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.footer-navigation li a:hover {
+	color: #F26C4F;
+}
+
+.footer-descr p {
+	font-size:11px;
+	color: #7e7e7e;
+}
